@@ -15,7 +15,7 @@ class AuthenUserController < ApplicationController
       end  
       redirect_back_or user
     else
-      flash[:danger] = "Đăng nhập thất bại"
+      flash[:danger] = "Đăng nhập không thành công"
       render 'new'
     end
   end

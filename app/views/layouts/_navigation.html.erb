@@ -6,7 +6,7 @@
         <%= render 'layouts/navigation_links' %>
         <!--Kiểm tra user login -->
           <%if logged_in? %>
-            <li><%= link_to "Contacts", contacts_path %></li>
+            <li><%= link_to "Danh bạ", contacts_path %></li>
             <!--Dropdown list -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -14,14 +14,14 @@
                </a>
                <ul class="dropdown-menu">
                  <li><%= link_to "Profile", current_user %></li>
-￼                <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+￼                <li><%= link_to "Đăng xuất", logout_path, method: "delete" %></li>
                </ul>
             </li>
           <% else %>
-            <li><%= link_to 'Home', '/', class: 'navbar-brand',id:'logo' %></li>
-            <li><%= link_to 'Login',login_path %></li>
+            <li><%= link_to 'Trang chủ', '/', class: 'navbar-brand',id:'logo' %></li>
+            <li><%= link_to 'Đăng nhập',login_path %></li>
             <li>
-              <%= link_to 'Signup',signup_path %>
+              <%= link_to 'Đăng ký',signup_path %>
             </li>
           <% end %>
                    

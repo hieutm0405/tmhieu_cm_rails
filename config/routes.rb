@@ -4,17 +4,18 @@ Rails.application.routes.draw do
   root 'master_pages#home'
   #Các trang tĩnh
   get 'master_pages/home'
-  get 'about' => 'master_pages#about'
+  
   get 'master_pages/help'
   #Khai báo các route đăng nhập
   get 'login' => 'authen_user#new'
   post 'login' =>'authen_user#create'
   get 'logout' =>'authen_user#destroy'
+  
   #Thêm user, rails tự tạo signup_path
   get 'signup' =>'users#new'
   #Phần danh bạ
   get 'contacts' => 'contacts#index'
-
+  get 'destroycontact' => 'contacts#delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

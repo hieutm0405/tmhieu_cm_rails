@@ -10,10 +10,10 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-            <th>Tên</th>
-            <th>Số điện thoại</th>
-            <th>Địa chỉ</th>
-            <th>Ghi chú</th>
+            <th>fullname</th>
+            <th>phonenumber</th>
+            <th>address</th>
+            <th>description</th>
             <th></th>
         <th></th>
         <th></th>
@@ -26,9 +26,9 @@
             <td><%= contact.phonenumber %></td>
             <td><%= contact.address %></td>
             <td><%= contact.description %></td>
-            <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete %></td>
+            <td><%= link_to 'Xem', contact %></td>
+        <td><%= link_to 'Sửa', edit_contact_path(contact) %></td>
+        <td><%= link_to 'Xóa',destroycontact_path(:id=> contact.id)%></td>
       <% end %>
     </tbody>
   </table>

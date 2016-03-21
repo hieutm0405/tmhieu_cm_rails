@@ -21,6 +21,7 @@ class ContactsController < ApplicationController
   def edit
   end
 
+
   # POST /contacts
   # POST /contacts.json
   def create
@@ -29,7 +30,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to contacts_path, notice: 'Contact was successfully created.' }
+        format.html { redirect_to contacts_path, notice: 'Tạo danh sách thành công' }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new }
@@ -43,7 +44,7 @@ class ContactsController < ApplicationController
   def update
     respond_to do |format|
       if @contact.update(contact_params)
-        format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
+        format.html { redirect_to @contact, notice: 'update danh sách thành công' }
         format.json { render :show, status: :ok, location: @contact }
       else
         format.html { render :edit }
@@ -54,12 +55,14 @@ class ContactsController < ApplicationController
 
   # DELETE /contacts/1
   # DELETE /contacts/1.json
-  def destroy
+  def delete
+    @contact = Contact.find(params[:id])
     @contact.destroy
-    respond_to do |format|
-      format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    #respond_to do |format|
+      #format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
+      #format.json { head :no_content }
+    #end
+    redirect_to contacts_path 
   end
 
   private
